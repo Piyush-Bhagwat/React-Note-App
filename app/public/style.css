@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700;800&display=swap');
+
+/* ----------------Scroll Bar---------- */
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #ffffff;
+    border-radius: 10px;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body,
+html {
+    width: 100%;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 3.5em;
+    margin: 10px 0px;
+}
+
+h3 {
+    font-weight: 100;
+}
+
+p {
+    font-weight: 100;
+}
+
+.body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #414141;
+    display: flex;
+}
+
+/* --------Side nav---------- */
+
+.sideNav {
+    width: 30vw;
+    height: 100vh;
+    background-color: #313131;
+    display: inline-block;
+}
+
+.noteCollection {
+    padding: 20px 15px 15px 0px;
+    height: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.noteCollection::-webkit-scrollbar {
+    width: 1px;
+}
+
+.noteCard {
+    display: flex;
+    padding: 20px 30px;
+    border-radius: 0px 60px 60px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all cubic-bezier(1, 0.45, 0.49, 1.05) 0.2s;
+}
+
+.titleBox {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.tag {
+    display: inline-block;
+    width: fit-content;
+    text-align: center;
+    padding: 4px 16px;
+    background-color: #525252;
+    border-radius: 19px;
+    margin: 0;
+}
+
+.noteCard h3 {
+    width: 60%;
+}
+
+.noteCard:hover {
+    background-color: #414141;
+
+}
+
+/* ------------TopNav----------------- */
+.editorTopNav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.TopNav{
+    padding: 2vh 0;
+    text-align: right;
+    border-bottom: 1px solid white;
+
+}
+.TopNav button{
+    background-color: inherit;
+    border: none;
+}
+
+.TopNav i{
+    font-size: 1.5em;
+    margin-left: 1vw;
+    border: none;
+}
+
+.sideTopNav{
+    padding: 2vh 1vw;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* -----------note Editor------------ */
+.editorTitle{
+    padding: 1% 6%;
+}
+
+.editorTitle .tag{
+    margin-left: 8px;
+}
+
+.editorTitle .dateTag{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.noteEditor {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    padding: 0 2%;
+    flex-direction: column;
+}
+
+.noteEditor p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.displayArea {
+    padding: 2% 6%;
+    height: 98vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* ---------Reusable--------- */
+
+.overflowHide {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
