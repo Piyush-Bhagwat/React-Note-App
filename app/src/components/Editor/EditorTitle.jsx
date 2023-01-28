@@ -7,7 +7,7 @@ export default function EditorTitle({ data, isEditable }) {
             <h1 contentEditable={isEditable}>{data.title}</h1>
             <div className="dateTag">
                 <p contentEditable={isEditable}>{data.date}</p>
-                <Tag tag={data.tags} isEditable={isEditable}/>
+                <Tag tag={data.tag} isEditable={isEditable}/>
             </div>
         </div>
     );

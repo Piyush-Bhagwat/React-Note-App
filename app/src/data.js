@@ -73,24 +73,24 @@ const note = {
         This plot twist addresses the question readers believed was already solved (who are Harry’s allies?) and the one yet to be resolved (who is targeting Harry?). It’s memorable because it startles readers, yet they also realize they overlooked the evidence that was staring them in the face. If Rowling hadn’t inserted a bucketful of clues, her reveals would have been less impressive. be DIsplayed on the App The -f is actually required because of the rebase. Whenever you do a rebase you would need to do a force push because the remote branch cannot be fast-forwarded to your commit. You'd always want to make sure that you do a pull before pushing, but if you don't like to force push to master or dev for that matter, you can create a new branch to push to and then merge or make a PR
         and the one yet to be resolved (who is targeting Harry?). It’s memorable because it startles readers, yet they also realize they overlooked the evidence that was staring them in the face. If Rowling hadn’t inserted a bucketful of clues, her reveals would have been less impressive. be DIsplayed on the App The -f is actually required because of the rebase. Whenever you do a rebase you would need to do a force push because the remote branch cannot be fast-forwarded to your commit. You'd always want to make sure that you do a pull before pushing, but if you don't like to force push to master or dev for that matter, you can create a new branch to push to and then merge or make a PR.`,
     date: "3-sep-22",
-    tags: "Sad",
+    tag: "Sad",
 };
 
-const notes = [
+var notes = [
     note,
     {
         title: "Day 2",
         content:
             "kahgdgakd asohd asdha soduhas oduash doasgd uasgdi asdgas odgaou saudg asohds",
         date: "2-dec-22",
-        tags: "code",
+        tag: "code",
     },
     {
         title: "Day 3",
         content:
             "kahgdgakd aasldh oahsd uhas odha doasuhdasuodhas odhasd asohdas oudhas duosahd oasudgh asufgduifgdsiuf daiufgha ofhao dfhaoudf asoudfha sododgaou saudg asohds",
         date: "2-jan-23",
-        tags: "friends",
+        tag: "friends",
     },
     {
         title: "Day 4 - Got a new Car",
@@ -125,7 +125,7 @@ const notes = [
         Ensure the Working of the Cooling System
         The pipes, which carry the engine coolant can damage very quickly as they transport high-pressure fluids, which can break if the pressure is too high. Also, the heater hoses face the same problem as they carry hot coolant to the passenger compartment. To maintain your car, you should regularly check the amount of coolant in the engine.`,
         date: "26 jan",
-        tags: "car",
+        tag: "car",
     },
 ];
 
@@ -140,12 +140,17 @@ function getDate(){
     return curDate;
 }
 
+function setData(data){
+    notes = data;
+    console.log(notes);
+}
+
 function addNote(){
     const newNote = {
         title: "Note Title...",
         content: "Note Body...",
         date: getDate(),
-        tags: "Add Tag..."
+        tag: "Add Tag..."
     }
 
     notes.unshift(newNote); //adds at front
@@ -153,5 +158,14 @@ function addNote(){
     return notes[lastIdx];
 }
 
+function setNote(data, idx){
+    notes[idx] = {
+        title: data.title,
+        content: data.content,
+        date: data.date,
+        tag: data.tag 
+    }
+}
+
 export default notes;
-export {addNote};
+export {addNote, setData, setNote, getDate};

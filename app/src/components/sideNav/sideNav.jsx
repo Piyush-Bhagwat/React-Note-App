@@ -1,11 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import { addNote } from "../../data";
 import Card from "./NoteCard";
+import {getDate} from "../../data"
 import SideTopNav from "./SideTopNav";
 
-export default function SideNav({ data, getID }) {
 
+export default function SideNav({ data, getID, onNotesChange}) {
     const [cardSeed, refreshCardSeed] = useState(0);
 
     const handleIDChange = (d)=>{
@@ -13,11 +13,10 @@ export default function SideNav({ data, getID }) {
     };
 
     const createNewNote = ()=>{
-        addNote();  
+        console.log("NewNote");
         refreshCardSeed(Math.random());
+        onNotesChange(data);
     }
-
-
 
     function createCard(data, id) {
         return (
@@ -26,7 +25,7 @@ export default function SideNav({ data, getID }) {
                 id={id}
                 title={data.title}
                 date={data.date}
-                tags={data.tags}
+                tags={data.tag}
                 onClick = {handleIDChange}
             />
         );
